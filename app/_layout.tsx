@@ -53,6 +53,7 @@ function RootLayoutNav() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
         <Stack.Screen name="tweet/[id]" options={{ title: 'Tweet', presentation: 'modal', animationTypeForReplace: 'push', animation:'slide_from_right'}}/>
+        <Stack.Screen name="new-tweet" options={{ title: 'New publication', presentation: 'modal', animationTypeForReplace: 'push', animation:'slide_from_bottom'}}/>
       </Stack>
     </ThemeProvider>
   );
