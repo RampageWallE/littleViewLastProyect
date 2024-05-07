@@ -10,8 +10,9 @@ const tweets = [
       },
       createdAt: '2020-08-27T12:00:00.000Z',
       content: 'Can you please check if the Subscribe button on Youtube works?',
-      image:
-        'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/thumbnail.png',
+      image: 
+          'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/thumbnail.png',
+              // 'https://wikizilla.org/w/images/8/8d/Godzilla_2014_RoomMates_Godzilla_Peel_and_Stick_Giant_Wall_Decals.jpg',
       numberOfComments: 123,
       numberOfRetweets: 11,
       numberOfLikes: 10,

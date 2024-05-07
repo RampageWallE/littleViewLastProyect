@@ -15,3 +15,7 @@ export type TweetType = {
     numberOfLikes?: number;
     impressions?: number;
   }
+
+export type TweetProps = {
+  tweet : TweetType;
+}
