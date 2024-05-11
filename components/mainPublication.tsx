@@ -4,27 +4,25 @@ import { Entypo } from '@expo/vector-icons';
 import { Link } from "expo-router";
 
 import IconButton from "./IconButton";
-import { styles } from '../styles/TweetStyle'; 
+import { styles } from '../styles/TweetDetail'; 
 //Import types from a diferent directory
 import { TweetProps } from "@/types";
 
 
-const Tweet = ({tweet}: TweetProps) => {
+const mainPublication = ({tweet}: TweetProps) => {
     return (
-      // asChild is used to rendering as a child of the link instead rendering the text
-      // You can also send data and desestructure that data 
-      // <Link href={`/tweet/${tweet.id}?orden=descendente`} asChild>
-      <Link push href={{pathname: `/tweet/${tweet.id}`, params: {example: 'THIS IS AN EXAMPLE'}}} asChild>
-        {/* Presable is used because View doesnt have press event but this yes  */}
-        <Pressable style={styles.container}>
-          <Image src={tweet.user.image} style={styles.userImage}/>
+    //   <Link href={{pathname: `/tweet/${tweet.id}`, params: {example: 'THIS IS AN EXAMPLE'}}} asChild>
+        <View style={styles.container}>
+            <View style={styles.container2}>
+                <Image src={tweet.user.image} style={styles.userImage}/>
+                <View style={styles.nickNameContainer}>
+                    <Text style={styles.name}>{tweet.user.name}</Text>
+                    <Text style={styles.username}>{tweet.user.username} · 2h</Text>
+                </View>
+                <Entypo style={{marginLeft: 'auto', paddingRight: 5}} name="dots-three-horizontal" size={22} color="gray" />
+            </View>
           <View style={styles.mainContainer}>
             {/* COMENTARYY'S INFORMATION USER */}
-            <View style={{ flexDirection: 'row'}}>
-              <Text style={styles.name}>{tweet.user.name}</Text>
-              <Text style={styles.username}>{tweet.user.username} · 2h</Text>
-              <Entypo style={{marginLeft: 'auto', paddingRight: 5}} name="dots-three-horizontal" size={22} color="gray" />
-            </View>
             {/* COMENTARY'S CONTENT */}
             <Text style={styles.content}>{tweet.content}</Text>
             {/* COMENTARY'S IMAGE*/}
@@ -38,8 +36,8 @@ const Tweet = ({tweet}: TweetProps) => {
               <View style={styles.botomElement}><IconButton icon="share-apple"text={tweet.impressions}/></View>
             </View>
           </View>
-      </Pressable>
-    </Link>
+      </View>
+    // </Link>
     )
 }
-export default Tweet;
+export default mainPublication;

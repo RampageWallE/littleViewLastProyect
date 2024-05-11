@@ -49,11 +49,13 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack initialRouteName='login' >
+        <Stack.Screen name="login" options={{headerShown: false, animationTypeForReplace: 'push', animation:'slide_from_left'}}/>
+        <Stack.Screen name="register" options={{headerShown: false,  animationTypeForReplace: 'push', animation:'slide_from_right'}}/>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
         <Stack.Screen name="tweet/[id]" options={{ title: 'Tweet', presentation: 'modal', animationTypeForReplace: 'push', animation:'slide_from_right'}}/>
-        <Stack.Screen name="new-tweet" options={{ title: 'New publication', presentation: 'modal', animationTypeForReplace: 'push', animation:'slide_from_bottom'}}/>
+        <Stack.Screen name="new-tweet" options={{ title: 'New Post', presentation: 'modal', animationTypeForReplace: 'push', animation:'slide_from_bottom'}}/>
       </Stack>
     </ThemeProvider>
   );

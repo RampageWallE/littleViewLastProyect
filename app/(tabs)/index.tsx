@@ -1,16 +1,20 @@
-import { Animated, FlatList, Pressable, StyleSheet } from 'react-native';
+import { Animated, Button, FlatList, Pressable, RefreshControl, StyleSheet } from 'react-native';
 
-import { View } from '@/components/Themed';
+import { Text, View } from '@/components/Themed';
 import tweets from '../../assets/data/tweets';
 import Tweet from '../../components/Tweet';
 import { Entypo } from '@expo/vector-icons';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <FlatList data={tweets} renderItem={({item})=> <Tweet tweet={item}/>}/>
+        <Button title='cerrar sesion' onPress={() => router.replace('/login')}/>
+      <FlatList 
+        data={tweets} 
+        // ItemSeparatorComponent={() => <Text>THIS IS A SPACE BETWEEN EACH ITEM</Text>}
+        renderItem={({item})=> <Tweet tweet={item}/>}/>
       <Link href="/new-tweet" asChild>
         <Entypo name='plus' size={24} color="white" style={styles.floatingButton}/>
       </Link>
